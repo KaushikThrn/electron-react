@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Lattice from './components/Lattice'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  
+  state={
+    files: []
+  };
+
+  fileUploadHandler = (event) =>{
+    const filesArray=[];
+    Object.keys(event.target.files).forEach(file=>{
+      filesArray.push(event.target.files[file])
+    })
+    this.setState({ files: filesArray})
+  }
+
+  render(){
+      return(
+        <div className="App">
+        <input type="file"  multiple="multiple" accept="image/x-png,image/gif,image/jpeg" onChange={this.fileUploadHandler} />
+        {this.state.files.length? <Lattice files={this.state.files} />:null}
+      </div>
+    );
+}
+    
 }
 
 export default App;
