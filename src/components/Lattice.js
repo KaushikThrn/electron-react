@@ -13,10 +13,10 @@ export default class Lattice extends Component {
   // increment is true for incrementing and false for decrementing 
   changeIndex = (increment) => {
     if(increment) {
-        this.setState((prevState)=>({index: ++prevState.index}));
+        if(this.state.index+1 <= this.props.files.length-1) this.setState((prevState)=>({index: ++prevState.index}));
     }
     else {
-        this.setState((prevState)=>({index: --prevState.index}))
+        if(this.state.index-1>=0) this.setState((prevState)=>({index: --prevState.index}))
     }
   }
 
