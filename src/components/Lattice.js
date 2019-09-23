@@ -8,13 +8,23 @@ export default class Lattice extends Component {
   }
   changeSelectedImage = (index) =>{
       this.props.files.length >= this.state.index ? this.setState({index}): this.setState({index: 0})
+  };
+
+  // increment is true for incrementing and false for decrementing 
+  changeIndex = (increment) => {
+    if(increment) {
+        this.setState((prevState)=>({index: ++prevState.index}));
+    }
+    else {
+        this.setState((prevState)=>({index: --prevState.index}))
+    }
   }
 
   render() {
       const { files } = this.props;
         return (
             <div className='gallery'>
-                <ImagePreview files={files} selectedImage={this.state.index} />
+                <ImagePreview files={files} selectedImage={this.state.index} incrementIndex={()=>this.changeIndex(true)} decrementIndex={()=>this.changeIndex(false)} />
                 <ImageThumbs  files={files} onClickImage={this.changeSelectedImage}/>  
             </div> 
         );

@@ -9,9 +9,9 @@ export default class ImageThumbs extends Component {
   render() {
       const { files } = this.props
         return (
-        <div className='image-thumbs'>
+        <div className='image-thumbs-container'>
            {files.map((image, index)=>{
-               return (<img key={index}className='thumbs' src={URL.createObjectURL(image)} onClick={this.handleClick.bind(this, index)}/>)
+               return (<img key={index} className='thumbs' src={URL.createObjectURL(image)} onClick={this.handleClick.bind(this, index)}/>)
            })}
         </div>
         );

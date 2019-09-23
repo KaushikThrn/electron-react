@@ -28,12 +28,14 @@
   height: 100%
 }
 
-.image-preview {
+.image-preview-container {
+  display: flex;
+  flex-direction: row;
   flex: 2;
   overflow: hidden;
 }
 
-.image-thumbs {
+.image-thumbs-container {
   flex: 1;
   border-left: 1px solid black;
 }
@@ -42,4 +44,14 @@
   height: 50px;
   width: 50px;
   margin: 0 5px;
+}
+
+.image-preview {
+  height: 500px;
+  width: 600px;
+}
+
+.navigation-arrow {
+  position: relative;
+  top: 300px;
 }
