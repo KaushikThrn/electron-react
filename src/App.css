@@ -30,9 +30,16 @@
 
 .image-preview {
   flex: 2;
+  overflow: hidden;
 }
 
 .image-thumbs {
   flex: 1;
   border-left: 1px solid black;
+}
+
+.thumbs {
+  height: 50px;
+  width: 50px;
+  margin: 0 5px;
 }
