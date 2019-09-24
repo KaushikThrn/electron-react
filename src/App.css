@@ -55,3 +55,7 @@
   position: relative;
   top: 300px;
 }
+
+.selected-thumb {
+  border: 2px solid blue
+}

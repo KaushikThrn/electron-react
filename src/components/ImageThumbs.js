@@ -11,7 +11,7 @@ export default class ImageThumbs extends Component {
         return (
         <div className='image-thumbs-container'>
            {files.map((image, index)=>{
-               return (<img key={index} className='thumbs' src={URL.createObjectURL(image)} onClick={this.handleClick.bind(this, index)}/>)
+               return (<img key={index} className={'thumbs '+ (this.props.selectedImage === index? 'selected-thumb': '')} src={URL.createObjectURL(image)} onClick={this.handleClick.bind(this, index)}/>)
            })}
         </div>
         );

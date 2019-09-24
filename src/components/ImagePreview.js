@@ -10,7 +10,7 @@ export default class ImagePreview extends Component {
         return (
         <div className='image-preview-container'>
             <img src={LeftArrow} className='thumbs navigation-arrow' onClick={(e)=>this.props.decrementIndex()} />
-            <img src={URL.createObjectURL(this.props.files[selectedImage])} className='image-preview' />
+            <img src={URL.createObjectURL(this.props.files[selectedImage])} className='image-preview ' />
             <img src={RightArrow} className='thumbs navigation-arrow' onClick={(e)=>this.props.incrementIndex()}/>
         </div>
         );

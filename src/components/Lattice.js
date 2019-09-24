@@ -25,7 +25,7 @@ export default class Lattice extends Component {
         return (
             <div className='gallery'>
                 <ImagePreview files={files} selectedImage={this.state.index} incrementIndex={()=>this.changeIndex(true)} decrementIndex={()=>this.changeIndex(false)} />
-                <ImageThumbs  files={files} onClickImage={this.changeSelectedImage}/>  
+                <ImageThumbs  files={files} onClickImage={this.changeSelectedImage} selectedImage={this.state.index}/>  
             </div> 
         );
   }

@@ -9,6 +9,7 @@ class App extends React.Component {
   };
 
   fileUploadHandler = (event) =>{
+    this.setState({files: []});
     const filesArray=[];
     Object.keys(event.target.files).forEach(file=>{
       filesArray.push(event.target.files[file])
